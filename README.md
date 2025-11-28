@@ -1,12 +1,12 @@
 ### 🏁 Fase 1: Backend & Infraestrutura (A Fundação)
 
-- [ ]  **Migração/Resolução do Banco de Dados**
+- [x]  **Migração/Resolução do Banco de Dados**
     - *Ação:* Criar instância no **Neon.tech** ou **Supabase** (já que o Render expirou).
     - *Ação:* Rodar as migrations/scripts SQL para recriar as tabelas (`users`, `books`, `authors`, `loans`).
-- [ ]  **Configuração de Segurança (CORS)**
+- [x]  **Configuração de Segurança (CORS)**
     - *Ação:* Instalar/Configurar o pacote `cors` no backend.
     - *Regra:* Permitir origens: `http://localhost:5173` (Vite padrão) e `https://seu-front-na-vercel.app`.
-- [ ]  **Re-deploy na Vercel**
+- [x]  **Re-deploy na Vercel**
     - *Ação:* Atualizar as Variáveis de Ambiente na Vercel (`DATABASE_URL`, `JWT_SECRET`).
     - *Teste:* Testar uma rota simples (ex: `/health` ou `/api`) pelo navegador para ver se o back está respondendo.
 
@@ -16,17 +16,17 @@
 
 *Configuração inicial para não ter dor de cabeça com pastas bagunçadas depois.*
 
-- [ ]  **Inicialização do Projeto**
+- [x]  **Inicialização do Projeto**
     - *Comando:* `npm create vite@latest nome-do-app -- --template react` (ou react-ts).
-- [ ]  **Instalação de Dependências Essenciais**
+- [x]  **Instalação de Dependências Essenciais**
     - *Rotas:* `npm install react-router-dom`
     - *Requisições:* `npm install axios`
     - *Estilização:* `npm install tailwindcss postcss autoprefixer` (ou biblioteca de UI de preferência).
     - *Ícones:* `npm install lucide-react` (ou `react-icons`).
     - *Feedback:* `npm install react-toastify` (para alertas de sucesso/erro).
-- [ ]  **Arquitetura de Pastas**
+- [x]  **Arquitetura de Pastas**
     - Criar pastas: `/services` (api.js), `/contexts` (AuthContext), `/pages`, `/components`, `/hooks`.
-- [ ]  **Configuração do Axios**
+- [x]  **Configuração do Axios**
     - Criar instância com `baseURL` dinâmica (ler de `.env`).
 
 ---
