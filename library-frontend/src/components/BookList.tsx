@@ -1,28 +1,33 @@
 import { useEffect, useState } from "react";
-import api from "../services/api";
+import api from "../services/livroService";
 import type { Livro } from "../types";
 
 export const BookList = () => {
-  // 1. Tipamos o useState. Dizemos: "Isso é uma lista de Livros"
   const [livros, setLivros] = useState<Livro[]>([]);
 
-useEffect(() => {
-    // Chama a função que criamos acima
-    api.listarLivros()
-      .then(dados => {
+  useEffect(() => {
+    api
+      .listarLivros()
+      .then((dados) => {
         console.log("Chegaram os livros!", dados);
         setLivros(dados);
       })
-      .catch(erro => console.error("Deu ruim:", erro));
+      .catch((erro) => console.error("Deu ruim:", erro));
   }, []);
 
   return (
     <div>
       <h1>Catálogo</h1>
-      <ul>
+      <ul className="bg-red">
         {livros.map((livro) => (
           <li key={livro.id}>
+            <strong>{livro.id}</strong>
+            <br></br>
             <strong>{livro.titulo}</strong>
+            <br></br>
+            <strong>{livro.quantidade_disponivel}</strong>
+            <br></br>
+            {livro.autores[0]?.nome}
           </li>
         ))}
       </ul>
