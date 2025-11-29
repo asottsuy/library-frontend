@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Livro } from "../types";
+import type { LivroPayload, LivroPut } from "../types";
 
 const baseURL = import.meta.env.VITE_API_URL;
 const token = "";
@@ -31,7 +31,7 @@ async function livroId(id: number) {
   return response.data;
 }
 
-async function criarLivro(livro: Livro) {
+async function criarLivro(livro: LivroPayload) {
   const response = await axios.post(`${baseURL}/livros`, livro, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ async function criarLivro(livro: Livro) {
   return response.data;
 }
 
-async function atualizarLivro(id: number, dadosAtt: Livro) {
+async function atualizarLivro(id: number, dadosAtt: LivroPut) {
   const response = await axios.put(`${baseURL}/livros/${id}`, dadosAtt, {
     headers: {
       Authorization: `Bearer ${token}`,
