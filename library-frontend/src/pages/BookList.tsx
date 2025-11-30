@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import livroService from "../services/livroService";
 import type { Livro } from "../types";
-import { CardLivro } from "./CardLivro";
-import { Modal } from "./Modal";
-import { LivroForm } from "./LivroForm";
+import { CardLivro } from "../components/CardLivro";
+import { Modal } from "../components/Modal";
+import { LivroForm } from "../components/LivroForm";
 
 export function BookList() {
-  //const navigate = useNavigate;
   const [livros, setLivros] = useState<Livro[]>([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,13 +41,11 @@ export function BookList() {
     }
   };
 
-  // Abre Modal para CRIAR
   const handleOpenCreate = () => {
     setEditingId(null);
     setIsModalOpen(true);
   };
 
-  // Abre Modal para EDITAR (Opcional: se quiser editar no modal também)
   const handleEdit = (id: number) => {
     setEditingId(id);
     setIsModalOpen(true);
@@ -57,7 +53,7 @@ export function BookList() {
 
   const handleSuccess = () => {
     setIsModalOpen(false);
-    loadBooks(); // Recarrega os dados do servidor para mostrar o novo livro
+    loadBooks();
   };
 
   if (loading)

@@ -60,7 +60,6 @@ export default function Login() {
               />
             </div>
 
-            {/* INPUT DE SENHA */}
             <div>
               <label
                 htmlFor="password"
@@ -82,7 +81,6 @@ export default function Login() {
             </div>
           </div>
 
-          {/* BOTÃO */}
           <div>
             <button
               disabled={loading}

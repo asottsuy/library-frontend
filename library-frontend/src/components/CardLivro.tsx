@@ -10,20 +10,16 @@ export function CardLivro({ livro, onEdit, onDelete }: BookCardProps) {
 
   return (
     <div className="group relative flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
-      {/* 1. Área da Imagem (com gradiente suave em cima) */}
       <div className="relative h-48 overflow-hidden bg-gray-200">
         <img
           src={imagemCapa}
           alt={livro.titulo}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        {/* Badge/Tag (Opcional - Ex: Categoria ou ID) */}
         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-gray-700 shadow-sm">
           #{livro.id}
         </div>
       </div>
-
-      {/* 2. Conteúdo do Card */}
       <div className="flex-1 p-5 flex flex-col">
         <h3
           className="text-lg font-bold text-gray-800 leading-tight mb-1 line-clamp-2"
@@ -66,13 +62,11 @@ export function CardLivro({ livro, onEdit, onDelete }: BookCardProps) {
         </div>
       </div>
 
-      {/* 3. Botões de Ação (Rodapé do Card) */}
       <div className="flex border-t border-gray-100 divide-x divide-gray-100">
         <button
           onClick={() => onEdit && onEdit(livro.id)}
           className="flex-1 py-3 text-sm font-medium text-gray-600 hover:bg-yellow-50 hover:text-yellow-600 transition-colors flex items-center justify-center gap-2"
         >
-          {/* Ícone Lápis (SVG) */}
           <svg
             className="w-4 h-4"
             fill="none"
@@ -93,7 +87,6 @@ export function CardLivro({ livro, onEdit, onDelete }: BookCardProps) {
           onClick={() => onDelete && onDelete(livro.id)}
           className="flex-1 py-3 text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 transition-colors flex items-center justify-center gap-2"
         >
-          {/* Ícone Lixeira (SVG) */}
           <svg
             className="w-4 h-4"
             fill="none"

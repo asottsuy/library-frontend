@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import livroService from "../services/livroService";
 
-// Novas props opcionais!
 interface LivroFormProps {
-  onSuccess?: () => void; // O que fazer quando salvar?
-  onCancel?: () => void; // O que fazer quando cancelar?
-  livroIdParaEditar?: number | null; // ID opcional vindo do pai
+  onSuccess?: () => void;
+  onCancel?: () => void;
+  livroIdParaEditar?: number | null;
 }
 
 export function LivroForm({
@@ -24,7 +23,6 @@ export function LivroForm({
   const [quantidade, setQuantidade] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Carregar dados se for edição
   useEffect(() => {
     if (isEditMode && livroIdParaEditar) {
       livroService.livroId(livroIdParaEditar).then((livro) => {
@@ -35,7 +33,6 @@ export function LivroForm({
         setImagem(livro.imagem_capa);
         setAutorId(livro.autores[0].id.toString());
       });
-      // .catch(() => toast.error("Erro ao carregar dados."));
     } else {
       setTitulo("");
       setAutorId("");
@@ -158,7 +155,7 @@ export function LivroForm({
       <div className="flex gap-3 justify-end pt-2">
         <button
           type="button"
-          onClick={onCancel} // Chama a função de fechar o modal
+          onClick={onCancel}
           className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
         >
           Cancelar

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import App from "./App";
-import { BookList } from "./components/BookList";
+import { BookList } from "./pages/BookList";
 import Login from "./pages/Login";
 
 export default function Router() {
