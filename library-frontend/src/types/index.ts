@@ -32,6 +32,20 @@ export interface Autor {
   livros?: Livro[] | number[];
 }
 
+export interface AutorPut {
+  nome: string;
+  nacionalidade: string;
+  biografia: string;
+  livros: number[];
+}
+
+export interface AutorPayload {
+  nome: string;
+  nacionalidade: string;
+  biografia: string;
+  livros: number[];
+}
+
 export interface Emprestimo {
   id: number;
   livro?: Livro;
