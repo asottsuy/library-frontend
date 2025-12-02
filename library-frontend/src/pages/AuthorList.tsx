@@ -14,7 +14,7 @@ export function AuthorList() {
 
   const loadAuthors = async () => {
     try {
-      const data = await autorService.listarLivros();
+      const data = await autorService.listarAutores();
       setAutores(data);
     } catch (error) {
       toast.error("Erro ao carregar autores");
@@ -68,9 +68,6 @@ export function AuthorList() {
       {/* Cabeçalho da Página */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
         <div>
-          <h2 className="text-3xl font-bold text-gray-800">
-            Biblioteca Moderador
-          </h2>
           <p className="text-gray-500">Gerencie seu acervo de autores</p>
         </div>
         <button

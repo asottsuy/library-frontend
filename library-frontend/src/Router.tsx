@@ -8,8 +8,8 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<App></App>}>
         <Route path="/login" element={<Login></Login>} />
-        <Route path="/livros" element={<BookList></BookList>} />
-        <Route path="/autores" element={<AuthorList></AuthorList>} />
+        <Route path="/manager" element={<BookList></BookList>} />
+        {/* <Route path="/autores" element={<AuthorList></AuthorList>} /> */}
         <Route path="*" element={<h1>Página não encontrada</h1>} />
       </Route>
     </Routes>

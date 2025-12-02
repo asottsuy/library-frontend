@@ -5,6 +5,7 @@ import type { Livro } from "../types";
 import { CardLivro } from "../components/CardLivro";
 import { Modal } from "../components/Modal";
 import { LivroForm } from "../components/LivroForm";
+import { AuthorList } from "./AuthorList";
 
 export function BookList() {
   const [livros, setLivros] = useState<Livro[]>([]);
@@ -97,6 +98,7 @@ export function BookList() {
           ))}
         </div>
       )}
+
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -108,6 +110,7 @@ export function BookList() {
           livroIdParaEditar={editingId}
         />
       </Modal>
+      <AuthorList></AuthorList>
     </div>
   );
 }

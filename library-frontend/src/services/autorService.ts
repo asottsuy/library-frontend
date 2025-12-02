@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { AutorPayload, AutorPut } from "../types";
+import type { AutorPut } from "../types";
 
 const baseURL = import.meta.env.VITE_API_URL;
 const token = "";
@@ -14,7 +14,7 @@ axios.interceptors.request.use((config) => {
 });
 
 async function listarAutores() {
-  const response = await axios.get(`${baseURL}/autores`, {
+  const response = await axios.get(`${baseURL}/autor`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -23,7 +23,7 @@ async function listarAutores() {
 }
 
 async function autorId(id: number) {
-  const response = await axios.get(`${baseURL}/autores/${id}`, {
+  const response = await axios.get(`${baseURL}/autor/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -31,8 +31,8 @@ async function autorId(id: number) {
   return response.data;
 }
 
-async function criarAutor(Autor: AutorPayload) {
-  const response = await axios.post(`${baseURL}/autores`, Autor, {
+async function criarAutor(Autor: AutorPut) {
+  const response = await axios.post(`${baseURL}/autor`, Autor, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -41,7 +41,7 @@ async function criarAutor(Autor: AutorPayload) {
 }
 
 async function atualizarAutor(id: number, dadosAtt: AutorPut) {
-  const response = await axios.put(`${baseURL}/autores/${id}`, dadosAtt, {
+  const response = await axios.put(`${baseURL}/autor/${id}`, dadosAtt, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -50,7 +50,7 @@ async function atualizarAutor(id: number, dadosAtt: AutorPut) {
 }
 
 async function removerAutor(id: number) {
-  const response = await axios.delete(`${baseURL}/autores/${id}`, {
+  const response = await axios.delete(`${baseURL}/autor/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
