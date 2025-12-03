@@ -68,7 +68,9 @@ export function AuthorList() {
       {/* Cabeçalho da Página */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
         <div>
-          <p className="text-gray-500">Gerencie seu acervo de autores</p>
+          <h2 className="text-3xl font-bold text-gray-800">
+            Gerencie seu acervo de autores
+          </h2>
         </div>
         <button
           onClick={handleOpenCreate}
